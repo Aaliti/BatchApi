@@ -20,11 +20,11 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RESTStudentJobConfig {
 
-    private static final String PROPERTY_REST_API_URL = "rest.api.to.database.job.api.url";
+    //private static final String PROPERTY_REST_API_URL = "rest.api.to.database.job.api.url";
 
     @Bean
-    ItemReader<StudentDTO> restStudentReader(Environment environment, RestTemplate restTemplate) {
-        return new RESTStudentReader(environment.getRequiredProperty(PROPERTY_REST_API_URL), restTemplate);
+    ItemReader<StudentDTO> restStudentReader() {
+        return new RESTStudentReader();
     }
 
     @Bean
